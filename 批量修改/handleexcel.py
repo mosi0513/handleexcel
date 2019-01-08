@@ -196,7 +196,26 @@ def get_data(filename,start_number,end_number,*args):
                 print("---  写入压浆记录:%s  ---"%content)
                 row +=1
 
-            filename = "C:\\Users\\mosi\\Desktop\\磨斯\\" + str(mileage) + '.xls'
+            #  获取到文件名的参数，存入对应文件夹
+            xh = mileage[1] + mileage[2]
+            if xh == "17":
+              filename = "C:\\Users\\mosi\\Desktop\\张拉\\第十七跨\\" + mileage + '.xls'
+            elif xh == "18":
+              filename = "C:\\Users\\mosi\\Desktop\\张拉\\第十八跨\\" + mileage + '.xls'
+            elif xh == "19":
+              filename = "C:\\Users\\mosi\\Desktop\\张拉\\第十九跨\\" + mileage + '.xls'
+            elif xh == "20":
+              filename = "C:\\Users\\mosi\\Desktop\\张拉\\第二十跨\\" + mileage + '.xls'
+            elif xh == "21":
+              filename = "C:\\Users\\mosi\\Desktop\\张拉\\第二十一跨\\" + mileage + '.xls'
+            elif xh == "22":
+              filename = "C:\\Users\\mosi\\Desktop\\张拉\\第二十二跨\\" + mileage + '.xls'
+            elif xh == "23":
+              filename = "C:\\Users\\mosi\\Desktop\\张拉\\第二十三跨\\" + mileage + '.xls'
+            elif xh == "24":
+              filename = "C:\\Users\\mosi\\Desktop\\张拉\\第二十三跨\\" + mileage + '.xls'
+
+
             write_excel.save(filename)
             print("create new file: %s"%filename)
             write_excel.close()
@@ -212,18 +231,18 @@ def get_data(filename,start_number,end_number,*args):
 def run():
 
     # 创建总文件夹
-    floder_name = "测试新建总文件夹"
+    floder_name = "张拉"
     current_path = "C:\\Users\\mosi\\Desktop\\"
     create_folder(floder_name,current_path)
 
 
     # 创建子文件夹
-    child_folder_names = ['子文件夹1','子文件夹2','子文件夹3','子文件夹4']
-    current_path = "C:\\Users\\mosi\\Desktop\\测试新建总文件夹"
+    child_folder_names = ['第十七跨','第十八跨','第十九跨','第二十跨','第二十一跨','第二十二跨','第二十三跨']
+    current_path = "C:\\Users\\mosi\\Desktop\\张拉"
     create_child_folder(child_folder_names,current_path)
 
 
-    # 从表中获取内容
+    # 从表中获取内容8
     filename = "C:\\Users\\mosi\\Desktop\\箱梁.xls"
     #  sheet：第一个单元格 num代表列数(表内ABCDEFG...)
     sheet = 1
@@ -237,7 +256,7 @@ def run():
  # 检测偏差值
 def test_data():
        
-    file_dir = r'C:\\Users\\mosi\\Desktop\\磨斯'
+    file_dir = r'C:\\Users\\mosi\\Desktop\\张拉'
     count = 0 
     faitnums = 0
     for root, dirs, files in os.walk(file_dir):  
